@@ -5,33 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css"> 
+    <script type="text/javascript" src="Form.js"></script>
     <script src="https://kit.fontawesome.com/6cb6dda6cf.js" crossorigin="anonymous"></script>
     <title>TPO Sandoval,C</title>
     <link rel="icon" type= "image/png" href="img/">
 </head>
 <body class=grid-container>
     <header class="header">
-        <h1>LOTE 26</h1>
     </header>
-    <nav class="navbar">
+    <div class="navbar">
         <span class="highlight"> 
-        <a class="navleft" href="#r1" target="_self"><i class="fas fa-coffee navleft"></i>Nuestra carta de infusiones</a>
+        <a class="navleft" href="Recetas.html"><i class="fas fa-coffee navleft"></i>Nuestra carta de infusiones</a>
         </span> 
         <span class="highlight">
         <a class="navleft" href="sucursales.html"><i class="fas fa-map-marked-alt navleft"></i>Puntos de venta</a>
         </span>
         <span class="highlight"> 
-        <a class="navleft" href="registrese.html"><i class="fas fa-donate navleft"></i>Compra online</a>
+        <a class="navleft" href="Compra.html"><i class="fas fa-donate navleft"></i>Compra online</a>
         </span>
         <span class="highlight">
         <a class="navright" href="Inicio.html"><i class="fas fa-home navleft"></i>INICIO</a>
         </span> 
-    </nav>
-    <article class="article">
+      </div>
+    <div class="main">
         <p> Bienvenido a la sección de compra online. En este espacio podrá realizar su pedido siguiendo los pasos requeridos. Una vez concretada su compra recibirá un mail de confirmación con los datos de entrega del producto. </p>
-    </article>
-    <footer class="footer">
+    </div>
+
+        <div class="menu"> 
+        <h2>Información personal </h2>
+        <br>
+      <p>
+        <label for="myForm" onsubmit="return validateName()" method="post">
+        <span> Nombre:</span>
+        <input type="text" name="fname">
+        </label>  
+      </p>
+      <p>
+         <label for="myForm1"  onsubmit="return validateSurname()" method="post">
+        <span> Apellido:</span>
+        <input type="text" name="fname">
+         </label>
+      </p>
+      <p>
+        <label for="myForm2" onsubmit="return validateAddress()" method="post">
+        <span> Direccion:</span>
+        <input type="text" name="fname">
+        </label>
+      </p>
+      <p>
+        <label for="myForm3" onsubmit="return validatePhone()" method="post">
+            <span> Telefono</span> 
+            <input type="text" name="fname">
+        </label>   
+      </p>   
+      <p><input type="submit" value="Enviar">
+      <input type="reset" value="Borrar"> 
+      </p>
+      </div>
+    <div class="section">
+        <h2>Información de pago</h2>
+        <br>
+        <p>
+          <label for="card">
+            <span>Tipo de tarjeta:</span>
+          </label>
+          <select id="card" name="usercard">
+            <option value="visa">Visa</option>
+            <option value="mc">Mastercard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </p>
+        <p>
+          <label for="number">
+            <span>Número de tarjeta:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="tel" id="number" name="cardnumber">
+        </p>
+        <p>
+          <label for="date">
+            <span> Fecha de caducidad:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="month" id="date" name="expiration">
+        </p>
+        <input type="submit" value="Validar Pago">
+      </div> 
+    
+    <div class="footer">
         <p>TPO 2021- Carla Sandoval</p>
-    </footer>
+    </div>
 </body>
 </html>

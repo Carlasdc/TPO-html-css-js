@@ -77,6 +77,13 @@ h2{
     padding: 7.5%;
     text-align: right;
 }
+.section {
+    background-color: rgb(163, 177, 138);
+    display:flexbox;
+    grid-area: article;
+    padding: 7.5%;
+    text-align: center;
+}
 .footer {
     align-content:center;
     background-color:rgb(52, 78, 65);
@@ -136,6 +143,7 @@ h2{
     box-shadow: -1px 1px 7px 0px rgba(88, 82, 82, 0.75);
     padding: 0px;
     text-align: center;
+    justify-items: stretch;
 }
 .grid-container2 {
     display: grid;
@@ -170,30 +178,24 @@ h2{
     } 
 }
 
-/* .cimg1 {
+/* .r1 {
     background-image: url("img/bg1.jpg");
     min-height: 100%;
   }
   
-  .cimg2 {
+  .r2 {
     background-image: url("img/bg2.jpg");
     min-height: 400px;
   }
   
-  .cimg3 {
+  .r3 {
     background-image: url("img/bg3.jpg");
     min-height: 400px;
   }
   
-  .cimg4 {
-    background-image: url("img/bg4.jpg");
-    min-height: 100%;
-  }
-  
-  .cimg1,
-  .cimg2,
-  .cimg3,
-  .cimg4 {
+  .r1,
+  .r2,
+  .r3,{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
