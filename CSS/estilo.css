@@ -12,7 +12,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: white;
+    background-color: yellowgreen;
     font-size: 1.2rem;
     min-height: 100%;
 } 
@@ -59,10 +59,10 @@ h2{
     background-color:rgb(88, 129, 87);
 }
 .main {
-    background-color: honeydew;
-    grid-area: menu;
+    background-color: whitesmoke;
+    grid-area: main;
     padding: 10%;
-    text-align: left;
+    text-align: center;
 }
 .menu {
     background-color: honeydew;
@@ -76,6 +76,13 @@ h2{
     grid-area: article;
     padding: 7.5%;
     text-align: right;
+}
+.article1 {
+    background-color: rgb(163, 177, 138);
+    display:flexbox;
+    grid-area: article;
+    padding: 7.5%;
+    text-align: center;
 }
 .section {
     background-color: rgb(163, 177, 138);
@@ -113,7 +120,7 @@ h2{
 @media screen and (min-width: 761px)and (max-width: 1023px) {
     .grid-container {
         gap: 0px;
-        grid-template-columns: 50% auto;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 30% 6% auto auto auto 5%;
         grid-template-areas: 
         "header header"
@@ -127,7 +134,7 @@ h2{
 }
 @media screen and (min-width: 1023px){
     .grid-container {
-        grid-template-columns: 50% auto;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 6% 40% auto auto 5%;
         grid-template-areas: 
         "navbar navbar"
@@ -173,29 +180,37 @@ h2{
         grid-template-areas: 
         "navbar"
         "header"
+        "main"
         "article"
         "footer";  
     } 
 }
 
-/* .r1 {
-    background-image: url("img/bg1.jpg");
+.r1 {
+    background-image: url(https://images.app.goo.gl/Ustph8PBHWmfH4uf6);
     min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.7;
+    position: relative;
   }
   
   .r2 {
-    background-image: url("img/bg2.jpg");
+    background-image: url("img/mate.jpg");
     min-height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.7;
+    position: relative;
   }
   
   .r3 {
     background-image: url("img/bg3.jpg");
     min-height: 400px;
-  }
-  
-  .r1,
-  .r2,
-  .r3,{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -225,4 +240,4 @@ h2{
   
   .ctext .fondo.transparente {
     background-color: rgba(0, 0, 0, 0.5);
-  } */
+  }
