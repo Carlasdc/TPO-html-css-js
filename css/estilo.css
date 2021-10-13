@@ -101,7 +101,6 @@ h2 {
 }
 
 .section {
-    background-color: rgb(163, 177, 138);
     display:grid;
     grid-area: article;
     padding: 7.5%;
@@ -150,7 +149,6 @@ h2 {
 }
 .grid-container {
     border-radius: 0px;
-    box-shadow: -1px 1px 7px 0px rgba(88, 82, 82, 0.75);
     padding: 0px;
     text-align: center;
 }
