@@ -7,7 +7,7 @@ function iniciar() {
 function validateName() {
     var x = document.getElementById ('nombre');
     console.log(
-        `me llego como variable: ${x}`
+        `me llego como variable: ${JSON.stringify(x)}`
     )
     if (x.value == "") {
       alert("Debe completar su Nombre");
@@ -54,7 +54,7 @@ function validateName() {
     let x = document.getElementById("number").textContent;
     var re = /^[0-9]{16}$/im;
     console.log(
-        `me llego como variable: ${x}`
+        `me llego como variable: ${JSON.stringify(x)}`
     )
     setTimeout(()=> {}, 5000)
     if (x === "" || !re.test(x)) 
