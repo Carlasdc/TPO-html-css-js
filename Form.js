@@ -1,51 +1,53 @@
+window.onload = iniciar;
+
+function iniciar() {
+  document.getElementById ('submit').addEventListener('click', validate, false)
+}
+
 function validateName() {
-    let x = document.forms["myForm"]["fname"].value;
+    var x = document.getElementById ('nombre');
     console.log(
         `me llego como variable: ${x}`
     )
-    setTimeout(()=> {}, 5000)
-    if (x == "") {
+    if (x.value == "") {
       alert("Debe completar su Nombre");
-      return false;
+      return false
     }
+    return true;
   }
 
   function validateSurname() {
-    let x = document.forms["myForm1"]["fname"].value;
+    var x = document.getElementById('apellido');
     console.log(
         `me llego como variable: ${x}`
     )
     setTimeout(()=> {}, 5000)
     if (x == "") {
       alert("Debe completar su Apellido");
-      return false;
+      return false
     }
+    return true;
   }
 
   function validateAddress() {
-    let x = document.forms["myForm2"]["fname"].value;
+    var x = document.getElementById('dir');
     console.log(
         `me llego como variable: ${x}`
     )
-    setTimeout(()=> {}, 5000)
     if (x == "") {
       alert("Debe completar su Direccion");
-      return false;
+      return false
     }
+    return true;
   }
 
   function validatePhone() {
-    let x = document.forms["myForm3"]["fname"].value;
-    var re = /^[0-9]{10}$/im;
-    console.log(
-        `me llego como variable: ${x}`
-    )
-    setTimeout(()=> {}, 5000)
-    if (x === "" || !re.test(x)) 
-    {
-      alert("Debe completar su Telefono");
-      return false;
+    var x = document.getElementById('telefono');
+    if (isNaN(elemento.value)){
+      alert('El campo teléfono debe ser un número');
+      return false
     }
+    return true;
   }
 
   function validateCard() {
@@ -58,6 +60,16 @@ function validateName() {
     if (x === "" || !re.test(x)) 
     {
       alert("Debe completar el Numero de Tarjeta");
-      return false;
+      return false
+    }
+    return true;
+  }
+
+  function validate(e){
+    if (validateName() && validateSurname() && validatePhone() && validateAddress() && confirm ('Desea enviar?')){
+    return true;
+    } else {
+  e.preventDefault();
+  return false;
     }
   }

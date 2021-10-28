@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
-    <script type="text/javascript" src="Form.js"></script>
     <script src="https://kit.fontawesome.com/6cb6dda6cf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>TPO Sandoval,C</title>
     <link rel="icon" type="image/png" href="img/">
 </head>
@@ -36,46 +36,36 @@
     <div class="menu">
         <h2>Información personal </h2>
         <br>
-        <p>
-            <label for="myForm" onsubmit="return validateName()" method="post">
-        <span> Nombre:</span>
-        <input type="text" name="fname">
-        </label>
-        </p>
-        <p>
-            <label for="myForm1" onsubmit="return validateSurname()" method="post">
-        <span> Apellido:</span>
-        <input type="text" name="fname">
-         </label>
-        </p>
-        <p>
-            <label for="myForm2" onsubmit="return validateAddress()" method="post">
-        <span> Direccion:</span>
-        <input type="text" name="fname">
-        </label>
-        </p>
-        <p>
-            <label for="myForm3" onsubmit="return validatePhone()" method="post">
-            <span> Telefono</span> 
-            <input type="text" name="fname">
-        </label>   
-      </p>   
-      <p>
-        <label for="myForm4" onsubmit="return validatePedido()" method="post">
-            <span> Pedido</span> 
-            <input type="text" name="fname" rows="5" cols="35" placeholder="Ingresa tu pedido">
-        </label>   
-      </p>
-      <p><input type="submit" value="Enviar">
-      </p>
+        <form action="" method="">
+    <p>
+        <label for="nombre" class="titulo"><span> Nombre:</span></label>
+        <input type="text" name="name" id= "nombre" required>
+    </p> 
+    <p>     
+        <label for="myForm" onsubmit="return validateSurname()" method="post"><span> Apellido:</span></label>
+        <input type="text" name="surname"id= "apellido" required>  
+    </p>
+    <p>
+        <label for="myForm" onsubmit="return validateAddress()" method="post"><span> Dirección:</span></label>
+        <input type="text" name="dir" id= "dir" required>
+    </p>
+    <p>
+        <label for="myForm" onsubmit="return validatePhone()" method="post"><span> Teléfono:</span></label>
+        <input type="text" name="phone">      
+    </p>
+    <p>
+        <label for="myForm" onsubmit="return validatePedido()" method="post"><span> Pedido:</span></label>
+        <input type="text" name="pedido" rows="5" cols="35" placeholder="Ingresa tu pedido" required>
+    </p>
+      <input type="submit" class="btn btn-success" id= "submit" value="Cargar datos">
       </div>
-    <div class="section">
+    </form>
+
+    <div class="article1">
         <h2>Información de pago</h2>
         <br>
         <p>
-            <label for="card">
-            <span>Tipo de tarjeta:</span>
-          </label>
+            <label for="card"><span>Tipo de tarjeta:</span></label>
             <select id="card" name="usercard">
             <option value="visa">Visa</option>
             <option value="mc">Mastercard</option>
@@ -83,25 +73,21 @@
           </select>
         </p>
         <p>
-            <label for="number">
-            <span>Número de tarjeta:</span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
+            <label for="number"><span>Número de tarjeta:</span><strong><abbr title="required">*</abbr></strong></label>
             <input type="tel" id="number" name="cardnumber">
         </p>
         <p>
-            <label for="date">
-            <span> Fecha de caducidad:</span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
+            <label for="date"><span> Fecha de caducidad:</span><strong><abbr title="required">*</abbr></strong></label>
             <input type="month" id="date" name="expiration">
         </p>
-        <input type="submit" value="Validar Pago">
+        <br>
+        <button type="submit" class="btn btn-success">Enviar</button>
     </div>
 
     <div class="footer">
         <p>TPO 2021- Carla Sandoval</p>
     </div>
+    <script type="text/javascript" src="Form.js"></script>
 </body>
 
 </html>
