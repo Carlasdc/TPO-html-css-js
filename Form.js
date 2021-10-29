@@ -1,75 +1,60 @@
-window.onload = iniciar;
+const nombre = document.querySelector('#nombre');
+const apellido = document.querySelector('#apellido');
+const direccion = document.querySelector('#dir');
+const telefono = document.querySelector('#phone');
+const pedido = document.querySelector('#pedido');
 
-function iniciar() {
-  document.getElementById ('submit').addEventListener('click', validate, false)
+const isRequired = value => value === '' ? false : true;
+
+const checkField = (field) => {
+  return isRequired(field.value.trim());
 }
 
-function validateName() {
-    var x = document.getElementById ('nombre');
-    console.log(
-        `me llego como variable: ${JSON.stringify(x)}`
-    )
-    if (x.value == "") {
-      alert("Debe completar su Nombre");
-      return false
-    }
-    return true;
-  }
+const isTelefonoValido = value => isNaN(value);
 
-  function validateSurname() {
-    var x = document.getElementById('apellido');
-    console.log(
-        `me llego como variable: ${x}`
-    )
-    setTimeout(()=> {}, 5000)
-    if (x == "") {
-      alert("Debe completar su Apellido");
-      return false
-    }
-    return true;
-  }
+const checkTelefono = (field) => {
+  return isTelefonoValido(field.value);
+}
 
-  function validateAddress() {
-    var x = document.getElementById('dir');
-    console.log(
-        `me llego como variable: ${x}`
-    )
-    if (x == "") {
-      alert("Debe completar su Direccion");
-      return false
-    }
-    return true;
-  }
+document.querySelector('#form1').addEventListener('submit', (e) => {
+  let isNameValid = checkField(nombre);
+  let isApellidoValid = checkField(apellido);
+  let isDireccionValid = checkField(direccion);
+  let isTelefonoValid = checkTelefono(telefono);
+  let isPedidoValid = checkField(pedido);
 
-  function validatePhone() {
-    var x = document.getElementById('telefono');
-    if (isNaN(elemento.value)){
-      alert('El campo teléfono debe ser un número');
-      return false
-    }
-    return true;
-  }
+  let isFormValid = isNameValid && isApellidoValid && isDireccionValid && isTelefonoValid && isPedidoValid;
 
-  function validateCard() {
-    let x = document.getElementById("number").textContent;
-    var re = /^[0-9]{16}$/im;
-    console.log(
-        `me llego como variable: ${JSON.stringify(x)}`
-    )
-    setTimeout(()=> {}, 5000)
-    if (x === "" || !re.test(x)) 
-    {
-      alert("Debe completar el Numero de Tarjeta");
-      return false
-    }
+  if (isFormValid) {
     return true;
+  } else {
+    e.preventDefault();
+    if (!isNameValid) alert("Debe completar Nombre");
+    if (!isApellidoValid) alert("Debe completar Apellido");
+    if (!isDireccionValid) alert("Debe completar Direccion");
+    if (!isTelefonoValid) alert("Debe completar Telefono");
+    if (!isPedidoValid) alert("Debe completar Pedido");
   }
+});
 
-  function validate(e){
-    if (validateName() && validateSurname() && validatePhone() && validateAddress() && confirm ('Desea enviar?')){
+const card = document.querySelector('#cardNumber')
+
+document.querySelector('#form2').addEventListener('submit', (e) => {
+  let isCardNumber = isNumber(card);
+  let isNotEmpty = checkField(card)
+
+  if (isCardNumber && isNotEmpty) {
     return true;
-    } else {
-  e.preventDefault();
-  return false;
-    }
+  } else {
+    e.preventDefault()
+    if (!isCardNumber) alert("Debe introducir su numero de tarjeta");
+    if (!isNotEmpty) alert("El campo debe completarse");
   }
+});
+
+function isNumber(card) {
+  if (isNaN(card.value)) {
+    return false
+  }
+  return true;
+}
